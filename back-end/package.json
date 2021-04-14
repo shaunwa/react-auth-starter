@@ -1,0 +1,23 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "7.13.10",
+    "@babel/node": "7.13.12",
+    "@babel/preset-env": "7.13.12",
+    "express": "4.17.1",
+    "mongodb": "3.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7"
+  }
+}
