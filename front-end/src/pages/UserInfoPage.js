@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useToken } from '../auth/useToken';
 
 export const UserInfoPage = () => {
+	const [,setToken] = useToken();
+
     // We'll use the history to navigate the user
     // programmatically later on (we're not using it yet)
     const history = useHistory();
@@ -38,9 +41,8 @@ export const UserInfoPage = () => {
     }
 
     const logOut = () => {
-        // We'll want to log the user out here
-        // and send them to the "login page"
-        alert('Log out functionality not implemented yet');
+		setToken('');
+		history.push('/login');
     }
     
     const resetValues = () => {
