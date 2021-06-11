@@ -28,9 +28,10 @@ export const updateUserInfoRoute = {
 		jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
 			if (err) return res.sendStatus(401);
 
-			const { id } = decoded;
+			const { id, isVerified } = decoded;
 
 			if (id !== userId) return res.sendStatus(403);
+			if (!isVerified) return res.sendStatus(403);
 
 			const db = getDbConnection('react-auth-db-jun2021');
 			const result = await db.collection('users').findOneAndUpdate(
@@ -39,7 +40,7 @@ export const updateUserInfoRoute = {
 				{ returnOriginal: false },
 			);
 
-			const { email, isVerified, info } = result.value;
+			const { email, info } = result.value;
 
 			jwt.sign(
 				{ id, email, isVerified, info },
