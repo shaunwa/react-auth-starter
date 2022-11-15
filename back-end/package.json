@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./src/server.js",
+    "start": "babel-node ./src/server.js",
+    "dev": "nodemon --exec npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
