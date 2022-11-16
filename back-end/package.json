@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./src/server.js",
+    "start": "babel-node -r dotenv/config ./src/server.js",
+    "dev": "nodemon --exec npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,7 +15,10 @@
     "@babel/core": "7.13.10",
     "@babel/node": "7.13.12",
     "@babel/preset-env": "7.13.12",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
     "express": "4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "3.6.5"
   },
   "devDependencies": {
