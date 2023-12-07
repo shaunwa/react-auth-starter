@@ -1,5 +1,7 @@
 NEVER TRUST THE CLIENT SIDE!
 
+Hello
+
 Authentication vs. Authorization
 - Authentiction = "Is this user who they're claiming to be?"
 - Authorization = "Is this user allowed to do what they're trying to do?"
